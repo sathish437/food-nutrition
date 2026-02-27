@@ -9,11 +9,11 @@ let listNutrition=document.getElementById("listNutrition")
 
 async function FoodNutrition() {
     try{
-        let food=await fetch('https://mocki.io/v1/fd8d5f93-9ac7-4946-a407-3d87d800eeea')
+        let food=await fetch('https://food-nutrition-1.onrender.com/foods')
         let res=await food.json()
         let resId=res.id
         options(res)
-        let nutrition=await fetch(`https://mocki.io/v1/99b4cc09-59ec-421e-8f7e-9c22a062cbb5?id=${resId}`)
+        let nutrition=await fetch(`https://food-nutrition-1.onrender.com/nutrition?id=${resId}`)
         let res1=await nutrition.json()
         FetchNu(res1)
     }catch(err){
