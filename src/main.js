@@ -1,7 +1,5 @@
 import './style.css'
 
-// https://mocki.io/v1/bc682360-133c-461b-b9f5-93ede2c6f4a6
-// https://mocki.io/v1/ed15c9ec-3c02-4a4c-8767-ffa4d39d73d9
 
 let op=document.getElementById("op")
 let fetchs=document.getElementById("fetch")
@@ -11,9 +9,8 @@ async function FoodNutrition() {
     try{
         let food=await fetch('https://food-nutrition-1.onrender.com/foods')
         let res=await food.json()
-        let resId=res.id
         options(res)
-        let nutrition=await fetch(`https://food-nutrition-1.onrender.com/nutrition?id=${resId}`)
+        let nutrition=await fetch(`https://food-nutrition-1.onrender.com/nutrition`)
         let res1=await nutrition.json()
         FetchNu(res1)
     }catch(err){
@@ -37,7 +34,6 @@ function click(listNu){
     fetchs.addEventListener('click',()=>{
         let indexId=op.selectedIndex
         let indexOp=op.options[indexId].text
-
         let cal=listNu[indexId].cal
         let pro=listNu[indexId].protein
         let fat=listNu[indexId].fat
