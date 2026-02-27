@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="src/style.css">
+    <title>food-nutrition</title>
+  </head>
+  <body class="flex flex-col items-center p-5 bg-gradient-to-r from-red-100 to-red-500">
+    <header class="flex gap-4 items-center mt-5 ">
+      <img src="img/top-nutrition-logo-templates-healthy-living-restaurants_1134503-622.avif" class="w-9 rounded-4xl " alt="">
+      <h1 class="text-2xl font-bold text-red-700 font-serif">Food Nutritions</h1>   
+    </header>
+     <div class="flex flex-col gap-7 items-center mt-30 p-3 w-80 h-36 bg-gradient-to-r from-red-200 to-red-400 rounded-3xl border-4 border-red-500" style="box-shadow: 3px 6px 6px rgb(254, 171, 171);">
+        <h1 class="text-[18px] font-bold text-white ">Select food Name</h1>
+        <nav class="flex gap-10">
+          <select id="op" class="bg-red-50 p-1 rounded-2xl text-center" id="food">
+
+          </select>
+          <button id="fetch" class="bg-gradient-to-r from-red-300 to-red-500 p-2 rounded-2xl active:scale-90" style="box-shadow: 3px 4px 5px;">Fetch Nutrition</button>
+        </nav>
+     </div>
+     <div id="listNutrition" class="w-80 h-40 mt-10">
+        
+     </div>
+     <script type="module" src="src/main.js"></script>
+  </body>
+</html>
