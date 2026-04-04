@@ -7,12 +7,20 @@ let listNutrition=document.getElementById("listNutrition")
 
 async function FoodNutrition() {
     try{
-        let food=await fetch('https://food-nutrition-1.onrender.com/foods')
-        let res=await food.json()
-        options(res)
-        let nutrition=await fetch(`https://food-nutrition-1.onrender.com/nutrition`)
-        let res1=await nutrition.json()
-        FetchNu(res1)
+        setInterval(async () => {
+            if(document.visibilityState==="visible"){
+                let food=await fetch('https://food-nutrition-1.onrender.com/foods')
+                let res=await food.json()
+                options(res)
+            }
+        }, 5 * 60 * 1000);
+        setInterval(async () => {
+            if(document.visibilityState==="visible"){
+                let nutrition=await fetch(`https://food-nutrition-1.onrender.com/nutrition`)
+                let res1=await nutrition.json()
+                FetchNu(res1)
+            }
+        }, 5 * 60 * 1000);
     }catch(err){
         console.log("error:",err)
     }
